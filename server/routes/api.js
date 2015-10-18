@@ -17,6 +17,7 @@ router.get('/exercises/:id', function(req, res, next){
 
 router.post('/exercises', function(req, res, next){
   console.log(req.body);
+  console.log(req.body.tags);
   new Exercise(req.body)
   .save(function(err, exercise){
     res.json("success");

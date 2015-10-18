@@ -1,5 +1,5 @@
 // *** database *** //
-require("./database");
+require("./models/database");
 
 // *** main dependencies *** //
 var dotenv = require("dotenv");

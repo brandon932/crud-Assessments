@@ -4,8 +4,9 @@ var Schema =  mongoose.Schema;
 var Exercise = new Schema({
   name: String,
   description: String,
-  tags: [String]
+  tags: Array,
 });
 
-mongoose.model("exercise", Exercise);
+module.exports = mongoose.model("exercise", Exercise);
+
 mongoose.connect("mongodb://localhost/exercise");

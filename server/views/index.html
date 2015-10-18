@@ -5,30 +5,43 @@
 
 {% block content %}
 
-  <div class="container">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
 
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
 
-  </div>
-  <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="f  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+      <h1>{{ title }}</h1>
 
-<table class="table table-striped">
-  <div id="all"></div>
-</table>
-
+      <form>
+        <div class="form-group">
+          <label for="Name">Name</label>
+          <input type="name" class="form-control" id="name" placeholder="name..">
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="description" class="form-control" id="description" placeholder="description..">
+        </div>
+        <div class="form-group">
+          <label for="Tags">Tags</label>
+          <input type="tags" class="form-control" id="tags" placeholder="tags..">
+        </div>
+        <button type="submit" class="btn btn-default" id='assignment-submit'>Submit</button>
+      </form>
+    </div>
+    <div class="col-md-6">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Tags</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody id="all">
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 {% endblock %}

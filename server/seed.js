@@ -16,7 +16,7 @@ var exerciseSeed= [
   {
     name: "node assement",
     description: "node",
-    tags: ["busty work", "work", "morWork", "yayTags"]
+    tags: ["busy work", "work", "morWork", "yayTags"]
   }
 ];
 function databaseSeed(){
