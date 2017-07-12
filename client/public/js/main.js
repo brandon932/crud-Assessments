@@ -31,6 +31,17 @@ $(document).on("click",".delete-button", function(e){
   });
 });
 
+$(document).on("click",".edit-button", function(e){
+  e.preventDefault();
+  console.log("this is the edit click");
+
+  $.get("api/exercises/"+$(this).attr("id"), function(data){
+    $('#name').val(data.name);
+    $('#description').val(data.description);
+    $('#tags').val(data.tags);
+  });
+  //TODO: update submit button to update object instead of post it
+});
 function loadAssignments(){
   $.get("api/exercises", function(data){
     for (var i = 0; i < data.length; i++) {
