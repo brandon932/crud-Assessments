@@ -19,6 +19,7 @@ $('#assignment-submit').on("click", function(e){
     loadAssignments();
   });
 });
+
 $(document).on("click",".update-button", function(e){
   e.preventDefault();
   payload = {
@@ -27,13 +28,21 @@ $(document).on("click",".update-button", function(e){
     tags:JSON.stringify($("#tags").val().split(","))
   };
   $.ajax({
-    method:"PUT",
-    url:"api/exercises/"+$(this).attr("id")
-  }).done(function(data){
-  $('.edit').hide();
-  $('.submit').show();
+
+    url:"api/exercises/"+$(this).attr("id"),
+    method: "PUT",
+    data: payload,
+    success: function(data){
+      $(":input", "form").val("");
+      $("#all").html("");
+      $('.edit').hide();
+      $('.submit').show();
+      $("#results").html("Update success!");
+      loadAssignments();
+    }
   });
 });
+
 $(document).on("click",".delete-button", function(e){
   e.preventDefault();
   $.ajax({
@@ -58,8 +67,8 @@ $(document).on("click",".edit-button", function(e){
   $('.edit').show();
   $('.update-button').attr("id", $(this).attr("id"));
 
-  //TODO: update submit button to update object instead of post it
 });
+
 function loadAssignments(){
   $('.edit').hide();
   $.get("api/exercises", function(data){
