@@ -10,7 +10,8 @@ $('#assignment-submit').on("click", function(e){
   payload = {
     name:$("#name").val(),
     description:$("#description").val(),
-    tags:JSON.stringify($("#tags").val().split(","))
+    tags:JSON.stringify($("#tags").val().split(",")),
+    student:$("#student").val()
   };
   console.log(payload);
   $.post("api/exercises",payload, function(data){
@@ -25,7 +26,8 @@ $(document).on("click",".update-button", function(e){
   payload = {
     name:$("#name").val(),
     description:$("#description").val(),
-    tags:JSON.stringify($("#tags").val().split(","))
+    tags:JSON.stringify($("#tags").val().split(",")),
+    student:$("#student").val()
   };
   $.ajax({
 
@@ -61,6 +63,7 @@ $(document).on("click",".edit-button", function(e){
     $('#name').val(data.name);
     $('#description').val(data.description) ;
     $('#tags').val(data.tags) ;
+    $('#student').val(data.student);
     // tags:JSON.stringify($("#tags").val().split(","))
   });
   $('.submit').hide();
@@ -78,6 +81,7 @@ function loadAssignments(){
         "<td>"+data[i].name+"</td>"+
         "<td>"+data[i].description+"</td>"+
         "<td>"+ data[i].tags+"</td>"+
+        "<td>"+ data[i].student+"</td>"+
         '<td><a class="btn btn-danger btn-xs delete-button" id="'+data[i]._id+'" role="button">Delete</a>'+
         '&nbsp;<a class="btn btn-primary btn-xs edit-button" id="'+data[i]._id+'" role="button">&nbsp Edit &nbsp</a></td>'+
         "</tr>"

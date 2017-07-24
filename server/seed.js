@@ -6,17 +6,21 @@ var exerciseSeed= [
   {
     name: "crud assement",
     description: "Crud",
-    tags: ["work", "work", "morWork"]
+    tags: ["work", "work", "morWork"],
+    student : "Bill"
+
   },
   {
     name: "Express assement",
     description: "express",
-    tags: ["work", "express", "morWork"]
+    tags: ["work", "express", "morWork"],
+    student : "Cindy"
   },
   {
     name: "node assement",
     description: "node",
-    tags: ["busy work", "work", "morWork", "yayTags"]
+    tags: ["busy work", "work", "morWork", "yayTags"],
+    student : "Lisa"
   }
 ];
 function databaseSeed(){

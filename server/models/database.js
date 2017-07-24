@@ -5,6 +5,7 @@ var Exercise = new Schema({
   name: String,
   description: String,
   tags: Array,
+  student: String
 });
 
 module.exports = mongoose.model("exercise", Exercise);
